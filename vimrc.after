@@ -1,0 +1,48 @@
+colorscheme base16-ocean
+
+"Turn off stupid bell
+set vb t_vb=
+
+" Splits ---------- {{{
+
+" Move between panes
+" http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Default split order
+set splitbelow
+set splitright
+
+" }}}
+
+" Key Bindings ----------- {{{
+
+" bind control-l to hashrocket
+imap <C-l> <Space>=><Space>
+
+" }}}
+
+" Create directory on write ----- {{{
+
+" http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
+" }}}
+
+
+" Replace Ack with Ag for cmd + shift + f
+let g:ackprg="ag --nocolor --nogroup --column"
