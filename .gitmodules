@@ -1,3 +1,6 @@
 [submodule "janus/taskpaper"]
 	path = janus/taskpaper
 	url = git@github.com:whharris/taskpaper.vim.git
+[submodule "janus/vim-fireplace"]
+	path = janus/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
