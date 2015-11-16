@@ -160,6 +160,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 #defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 #defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+## Magic Mouse
+## Enable right click
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
 #
 ## Disable “natural” (Lion-style) scrolling
 #defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -169,8 +173,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #
 ## Enable full keyboard access for all controls
 ## (e.g. enable Tab in modal dialogs)
-#defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-#
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
 ## Use scroll gesture with the Ctrl (^) modifier key to zoom
 #defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 #defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
@@ -178,11 +182,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 #
 ## Disable press-and-hold for keys in favor of key repeat
-#defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-#
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
 ## Set a blazingly fast keyboard repeat rate
-#defaults write NSGlobalDomain KeyRepeat -int 0
-#
+defaults write NSGlobalDomain KeyRepeat -int 0
+
 ## Set language and text formats
 ## Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 ## `Inches`, `en_GB` with `en_US`, and `true` with `false`.
