@@ -228,7 +228,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ################################################################################
 #
 ## Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-#defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder QuitMenuItem -bool true
 #
 ## Finder: disable window animations and Get Info animations
 #defaults write com.apple.finder DisableAllAnimations -bool true
@@ -245,26 +245,26 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 #
 ## Finder: show hidden files by default
-##defaults write com.apple.finder AppleShowAllFiles -bool true
-#
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
 ## Finder: show all filename extensions
-#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-#
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
 ## Finder: show status bar
-#defaults write com.apple.finder ShowStatusBar -bool true
-#
+defaults write com.apple.finder ShowStatusBar -bool true
+
 ## Finder: show path bar
-#defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
 #
 ## Display full POSIX path as Finder window title
-#defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-#
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
 ## When performing a search, search the current folder by default
-#defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-#
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
 ## Disable the warning when changing a file extension
-#defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-#
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 ## Enable spring loading for directories
 #defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 #
@@ -272,8 +272,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #defaults write NSGlobalDomain com.apple.springing.delay -float 0
 #
 ## Avoid creating .DS_Store files on network volumes
-#defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-#
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
 ## Disable disk image verification
 #defaults write com.apple.frameworks.diskimages skip-verify -bool true
 #defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
@@ -309,11 +309,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #
 ## Use list view in all Finder windows by default
 ## Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-#defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-#
+## Might require removing .DS_Store from all directories
+## Eg find ./ -name ".DS_Store" -exec rm {} \;
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
 ## Disable the warning before emptying the Trash
-#defaults write com.apple.finder WarnOnEmptyTrash -bool false
-#
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
 ## Enable AirDrop over Ethernet and on unsupported Macs running Lion
 #defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 #
