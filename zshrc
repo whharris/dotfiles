@@ -49,3 +49,5 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 export KEYTIMEOUT=1
 bindkey "^R" history-incremental-search-backward
+
+export EDITOR=/usr/bin/vim
