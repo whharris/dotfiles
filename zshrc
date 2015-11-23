@@ -51,3 +51,6 @@ export KEYTIMEOUT=1
 bindkey "^R" history-incremental-search-backward
 
 export EDITOR=/usr/bin/vim
+
+# PATH
+export PATH="$PATH:$HOME/bin"
