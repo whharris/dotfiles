@@ -4,3 +4,6 @@
 [submodule "janus/vim-fireplace"]
 	path = janus/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "janus/ensime-vim"]
+	path = janus/ensime-vim
+	url = git@github.com:ensime/ensime-vim.git
