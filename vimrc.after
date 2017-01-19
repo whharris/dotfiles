@@ -3,6 +3,8 @@ colorscheme base16-ocean
 "Turn off stupid bell
 set vb t_vb=
 
+" Use System pastboard
+set cb=unnamedplus
 " Splits ---------- {{{
 
 " Move between panes
@@ -46,3 +48,4 @@ augroup END
 
 " Replace Ack with Ag for cmd + shift + f
 let g:ackprg="ag --nocolor --nogroup --column"
+
